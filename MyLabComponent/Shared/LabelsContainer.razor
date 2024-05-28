@@ -1,0 +1,25 @@
+﻿<div class="labels-container">
+    <CascadingValue Value="this">
+        @ChildContent
+    </CascadingValue>
+</div>
+
+@code {
+    [Parameter] public List<LabelModel> Labels { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public EventCallback<LabelModel> OnStatusUpdated { get; set; }
+
+    public LabelModel Payload { get; set; }
+
+    public async Task UpdateLabelAsync(EnumColumns newStatus)
+    {
+        var task = Labels.SingleOrDefault(x => x.Id == Payload.Id);
+
+        if (task != null)
+        {
+            task.Column = newStatus;
+            await OnStatusUpdated.InvokeAsync(Payload);
+            task.ColNr = (int)task.Column;
+        }
+    }
+}

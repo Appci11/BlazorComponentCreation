@@ -1,0 +1,50 @@
+﻿<div class="label-status">
+    <h3>@StultepioPav (@Labels.Count())</h3>
+
+    <ul class="dropzone @dropClass"
+        ondragover="event.preventDefault();"
+        ondragstart="event.dataTransfer.setData('', event.target.id);"
+        @ondrop="HandleDrop"
+        @ondragenter="HandleDragEnter"
+        @ondragleave="HandleDragLeave">
+
+        @foreach (var label in Labels)
+        {
+            <Label LabelModel="label" />
+        }
+
+    </ul>
+</div>
+
+@code {
+
+    [CascadingParameter] LabelsContainer Container { get; set; }
+    [Parameter] public EnumColumns ListStatus { get; set; }
+    [Parameter] public String StultepioPav { get; set; }
+
+    List<LabelModel> Labels = new List<LabelModel>();
+    string dropClass = "";
+
+    protected override void OnParametersSet()
+    {
+        Labels.Clear();
+        Labels.AddRange(Container.Labels.Where(x => x.Column == ListStatus));
+    }
+
+    private void HandleDragEnter()
+    {
+        if (ListStatus == Container.Payload.Column) return;
+        dropClass = "can-drop";
+    }
+
+    private void HandleDragLeave()
+    {
+        dropClass = "";
+    }
+
+    private async Task HandleDrop()
+    {
+        dropClass = "";
+        await Container.UpdateLabelAsync(ListStatus);
+    }
+}

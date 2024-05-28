@@ -1,0 +1,55 @@
+﻿@page "/"
+@using MyLabComponent.Shared
+
+<PageTitle>Home</PageTitle>
+
+<h1>Sarasu testavimas</h1>
+
+@if (loaded)
+{
+    <MyComponent Pavadinimai=Pavadinimai Eilutes=Eilutes OnEmployeeDeleted="EmployeeDeleted" />
+
+    @foreach (var eils in Eilutes)
+    {
+        @foreach(var eil in eils)
+        {
+            <p>@eil</p>
+        }
+        <p>------------</p>
+    }
+
+}
+
+@code {
+    bool loaded = false;
+    List<String> Pavadinimai = new List<String>();
+    List<List<String>> Eilutes = new List<List<String>>();
+
+
+    protected override void OnInitialized()
+    {
+
+        Pavadinimai.Add("Ne skaiciai");
+        Pavadinimai.Add("Lyginiai");
+        Pavadinimai.Add("Nelyginiai");
+        List<String> Temp1 = new List<String>();
+        Temp1.Add("Vienas");
+        Temp1.Add("Du");
+        Temp1.Add("Gaideliai");
+        Temp1.Add("Trys");
+        List<String> Temp2 = new List<String>();
+        Temp2.Add("Keturi");
+        Temp2.Add("Saule");
+        Temp2.Add("Penki");
+        Eilutes.Add(Temp1);
+        Eilutes.Add(Temp2);
+        List<String> Temp3 = new List<String>();
+        Eilutes.Add(Temp3);
+        loaded = true;
+    }
+
+    protected async Task EmployeeDeleted()
+    {
+        StateHasChanged();
+    }
+}
