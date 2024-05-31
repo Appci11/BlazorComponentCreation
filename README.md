@@ -1,4 +1,4 @@
-# Manual list sorter for razor
+# Manual lists sorter for razor
 
 Componen is used to sort string type lists manually.
 Component created for learning purposes. Usage in actual projects not recommended
