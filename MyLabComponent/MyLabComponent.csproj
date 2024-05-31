@@ -7,11 +7,12 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Component for manual List&lt;List&lt;String&gt;&gt; sorting</Title>
     <PackageId>RolandasM.Laboratorinis.ManualListSorter</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.3</Version>
     <Authors>Rolandas M</Authors>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>Manual lists sorter for learning purposes</Description>
+    <RepositoryUrl>https://github.com/Appci11/BlazorComponentCreation/tree/master</RepositoryUrl>
   </PropertyGroup>
 
 

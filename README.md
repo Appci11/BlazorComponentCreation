@@ -1,4 +1,4 @@
-# Manual lists sorter for razor
+﻿# Manual lists sorter for razor
 
 Componen is used to sort string type lists manually.
 Component created for learning purposes. Usage in actual projects not recommended
@@ -52,6 +52,16 @@ Or using VisualStudio nuget mannager
 <MyComponent Size=small" />
 
 ```
+```c#
+// Color changing, provide hex color code (no #)
+<MyComponent ItemBackgroundClr="ccdbd7" ItemTextClr="000000" />
+
+```
+```c#
+// FilterBox (default false)
+<MyComponent FilterBox=true" />
+
+```
 
 ## Contributing
 
@@ -60,3 +70,10 @@ No contributions are possible. This is mainly used as a  practice to learn about
 ## License
 
 [Apacha-2.0](http://www.apache.org/licenses/LICENSE-2.0 )
+
+
+## Version History
+
+v1.0.0 – Public release.
+v1.0.2 – Added component sizing options.
+v1.0.3 – Component coloring. Filtering.
