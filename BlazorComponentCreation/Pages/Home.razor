@@ -7,7 +7,7 @@
 
 @if (loaded)
 {
-    <MyComponent ColNames=Pavadinimai StringValues=Eilutes OnLabelPositionChanged="LabelChanged" />
+    <MyComponent ColNames=Pavadinimai StringValues=Eilutes OnLabelPositionChanged="LabelChanged" Size="small"/>
 
     @foreach (var eils in Eilutes)
     {
@@ -17,14 +17,12 @@
         }
         <p>------------</p>
     }
-
 }
 
 @code {
     bool loaded = false;
     List<String> Pavadinimai = new List<String>();
     List<List<String>> Eilutes = new List<List<String>>();
-
 
     protected override void OnInitialized()
     {

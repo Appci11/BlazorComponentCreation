@@ -2,10 +2,10 @@
 {
     if (ColNames.Count > 0)
     {
-        <LabelsContainer Labels="Labels" OnStatusUpdated="HandleStatusUpdated">
+        <LabelsContainer Labels="Labels" Size="@Size" OnStatusUpdated="HandleStatusUpdated">
             @for (int i = 0; i < ColNames.Count; i++)
             {
-                <LabelList ListStatus=@((EnumColumns)Enum.ToObject(typeof(EnumColumns), @i)) StultepioPav=@ColNames[@i] />
+                <LabelList ListStatus=@((EnumColumns)Enum.ToObject(typeof(EnumColumns), @i)) StultepioPav=@ColNames[@i] Size="@Size"/>
             }
         </LabelsContainer>
     }
@@ -15,6 +15,7 @@
     [Parameter] public EventCallback<int> OnLabelPositionChanged { get; set; }
     [Parameter] public List<String> ColNames { get; set; }
     [Parameter] public List<List<String>> StringValues { get; set; }
+    [Parameter] public string Size { get; set; } = "big";
 
     bool loaded = false;
     int colIndex = 0;

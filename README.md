@@ -1,7 +1,12 @@
 # Manual list sorter for razor
 
+Componen is used to sort string type lists manually.
 Component created for learning purposes. Usage in actual projects not recommended
-Componen is used to sort string type lists manually. To be used in all .NET8 and newer projects.
+[Code Repository](https://github.com/Appci11/BlazorComponentCreation)
+[Nuget Repository](https://www.nuget.org/packages/RolandasM.Laboratorinis.ManualListSorter#readme-body-tab)
+
+## Requirements
+.NET8 and newer projects.
 
 ## Installation
 

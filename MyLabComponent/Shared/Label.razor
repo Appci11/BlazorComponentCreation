@@ -1,10 +1,11 @@
-﻿<li class="draggable" draggable="true" @ondragstart="@(() => HandleDragStart(LabelModel))">
+﻿<li class="draggable-@Size" draggable="true" @ondragstart="@(() => HandleDragStart(LabelModel))">
     <p class="label">@LabelModel.Description</p>
 </li>
 
 @code {
     [CascadingParameter] LabelsContainer Container { get; set; }
     [Parameter] public LabelModel LabelModel { get; set; }
+    [Parameter] public string Size { get; set; } = "big";
 
     private void HandleDragStart(LabelModel selectedLabel)
     {

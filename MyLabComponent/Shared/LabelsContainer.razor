@@ -8,6 +8,7 @@
     [Parameter] public List<LabelModel> Labels { get; set; }
     [Parameter] public RenderFragment ChildContent { get; set; }
     [Parameter] public EventCallback<LabelModel> OnStatusUpdated { get; set; }
+    [Parameter] public string Size { get; set; } = "big";
 
     public LabelModel Payload { get; set; }
 

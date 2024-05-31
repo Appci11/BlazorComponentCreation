@@ -11,7 +11,7 @@
     <Authors>Rolandas M</Authors>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Description>Manual sorter for learning purposes</Description>
+    <Description>Manual lists sorter for learning purposes</Description>
   </PropertyGroup>
 
 

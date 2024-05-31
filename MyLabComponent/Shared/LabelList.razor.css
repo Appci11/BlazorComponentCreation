@@ -1,12 +1,24 @@
-.label-status {
+.label-status-big {
     display: flex;
     flex-direction: column;
     width: 312px;
 }
 
-    .label-status ul {
-        flex: 1;
-    }
+.label-status-medium {
+    display: flex;
+    flex-direction: column;
+    width: 262px;
+}
+
+.label-status-small {
+    display: flex;
+    flex-direction: column;
+    width: 212px;
+}
+
+.label-status ul {
+    flex: 1;
+}
 
 .dropzone {
     padding: 30px;
