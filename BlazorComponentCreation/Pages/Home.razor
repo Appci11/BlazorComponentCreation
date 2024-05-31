@@ -7,7 +7,7 @@
 
 @if (loaded)
 {
-    <MyComponent ColNames=Pavadinimai StringValues=Eilutes OnLabelPositionChanged="LabelChanged" Size="small"/>
+    <MyComponent ColNames=Pavadinimai StringValues=Eilutes OnLabelPositionChanged="LabelPositionChanged" Size="big"/>
 
     @foreach (var eils in Eilutes)
     {
@@ -46,7 +46,7 @@
         loaded = true;
     }
 
-    protected async Task LabelChanged()
+    protected async Task LabelPositionChanged()
     {
         StateHasChanged();
     }

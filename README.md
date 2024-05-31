@@ -46,6 +46,11 @@ Or using VisualStudio nuget mannager
   List<List<String>> Eilutes = new List<List<String>>();
 }
 ```
+```c#
+// Size changing (small/medium/big)
+<MyComponent Size=small" />
+
+```
 
 ## Contributing
 
