@@ -2,6 +2,7 @@
 
 Componen is used to sort string type lists manually.
 Component created for learning purposes. Usage in actual projects not recommended
+
 [Code Repository](https://github.com/Appci11/BlazorComponentCreation)
 [Nuget Repository](https://www.nuget.org/packages/RolandasM.Laboratorinis.ManualListSorter#readme-body-tab)
 
