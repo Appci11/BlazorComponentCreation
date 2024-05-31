@@ -7,10 +7,11 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Component for manual List&lt;List&lt;String&gt;&gt; sorting</Title>
     <PackageId>RolandasM.Laboratorinis.ManualListSorter</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Rolandas M</Authors>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>Manual sorter for learning purposes</Description>
   </PropertyGroup>
 
 
@@ -24,6 +25,13 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

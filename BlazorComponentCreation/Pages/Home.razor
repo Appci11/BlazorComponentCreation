@@ -7,7 +7,7 @@
 
 @if (loaded)
 {
-    <MyComponent Pavadinimai=Pavadinimai Eilutes=Eilutes OnEmployeeDeleted="EmployeeDeleted" />
+    <MyComponent ColNames=Pavadinimai StringValues=Eilutes OnLabelPositionChanged="LabelChanged" />
 
     @foreach (var eils in Eilutes)
     {
@@ -48,7 +48,7 @@
         loaded = true;
     }
 
-    protected async Task EmployeeDeleted()
+    protected async Task LabelChanged()
     {
         StateHasChanged();
     }
