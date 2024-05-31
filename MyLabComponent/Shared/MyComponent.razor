@@ -1,12 +1,17 @@
 ﻿@if (loaded)
 {
-    //<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+    if (FilterBox)
+    {
+        <InputText @bind-Value="searchString" @onkeydown="LoadLabels" placeholder="Item Filter" />
+    }
     if (ColNames.Count > 0)
     {
-        <LabelsContainer Labels="Labels" Size="@Size" OnStatusUpdated="HandleStatusUpdated">
+        <LabelsContainer Labels="Labels" Size="@Size" OnStatusUpdated="HandleStatusUpdated"
+                         ItemBackgroundClr="@ItemBackgroundClr" ItemTextClr="@ItemTextClr">
             @for (int i = 0; i < ColNames.Count; i++)
             {
-                <LabelList ListStatus=@((EnumColumns)Enum.ToObject(typeof(EnumColumns), @i)) StulpelioPav=@ColNames[@i] Size="@Size"/>
+                <LabelList ListStatus=@((EnumColumns)Enum.ToObject(typeof(EnumColumns), @i)) StulpelioPav=@ColNames[@i] Size="@Size"
+                           ItemBackgroundClr="@ItemBackgroundClr" ItemTextClr="@ItemTextClr" />
             }
         </LabelsContainer>
     }
@@ -17,22 +22,19 @@
     [Parameter] public List<String> ColNames { get; set; }
     [Parameter] public List<List<String>> StringValues { get; set; }
     [Parameter] public string Size { get; set; } = "big";
+    [Parameter] public string ItemBackgroundClr { get; set; } = "5c6b7f";
+    [Parameter] public string ItemTextClr { get; set; } = "ffffff";
+    [Parameter] public bool FilterBox { get; set; } = false;
 
     bool loaded = false;
     int colIndex = 0;
+    string searchString = "";
 
     List<LabelModel> Labels = new List<LabelModel>();
 
     protected override void OnInitialized()
     {
-        int id = 1;
-        for (int i = 0; i < ColNames.Count; i++)
-        {
-            foreach (var item in StringValues[i])
-            {
-                Labels.Add(new LabelModel { Id = id++, Description = item, Column = (EnumColumns)i, ColNr = i });
-            }
-        }
+        LoadLabels();
         loaded = true;
     }
 
@@ -47,5 +49,21 @@
         }
         await OnLabelPositionChanged.InvokeAsync();
         StateHasChanged();
+    }
+
+    void LoadLabels()
+    {
+        Labels.Clear();
+        int id = 1;
+        for (int i = 0; i < ColNames.Count; i++)
+        {
+            foreach (var item in StringValues[i])
+            {
+                if (item.StartsWith(searchString))
+                {
+                    Labels.Add(new LabelModel { Id = id++, Description = item, Column = (EnumColumns)i, ColNr = i });
+                }
+            }
+        }
     }
 }

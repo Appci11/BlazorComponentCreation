@@ -9,6 +9,8 @@
     [Parameter] public RenderFragment ChildContent { get; set; }
     [Parameter] public EventCallback<LabelModel> OnStatusUpdated { get; set; }
     [Parameter] public string Size { get; set; } = "big";
+    [Parameter] public string ItemBackgroundClr { get; set; } = "5c6b7f";
+    [Parameter] public string ItemTextClr { get; set; } = "ffffff";
 
     public LabelModel Payload { get; set; }
 
@@ -22,10 +24,5 @@
             await OnStatusUpdated.InvokeAsync(Payload);
             task.ColNr = (int)task.Column;
         }
-    }
-
-    void IncrementCount()
-    {
-        Labels.RemoveAt(0);
     }
 }

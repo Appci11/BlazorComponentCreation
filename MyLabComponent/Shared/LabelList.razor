@@ -10,7 +10,7 @@
 
         @foreach (var label in Labels)
         {
-            <Label Size="@Size" LabelModel="label" />
+            <Label Size="@Size" ItemBackgroundClr="@ItemBackgroundClr" ItemTextClr="@ItemTextClr" LabelModel="label" />
         }
 
     </ul>
@@ -22,6 +22,9 @@
     [Parameter] public EnumColumns ListStatus { get; set; }
     [Parameter] public String StulpelioPav { get; set; }
     [Parameter] public string Size { get; set; } = "big";
+    [Parameter] public string ItemBackgroundClr { get; set; } = "5c6b7f";
+    [Parameter] public string ItemTextClr { get; set; } = "ffffff";
+
 
     List<LabelModel> Labels = new List<LabelModel>();
     string dropClass = "";
