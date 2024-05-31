@@ -7,7 +7,7 @@ Component created for learning purposes. Usage in actual projects not recommende
 [Nuget Repository](https://www.nuget.org/packages/RolandasM.Laboratorinis.ManualListSorter#readme-body-tab)
 
 ## Requirements
-.NET8 and newer projects.
+.NET8 or later.
 
 ## Installation
 
@@ -25,7 +25,7 @@ NuGet\Install-Package RolandasM.Laboratorinis.ManualListSorter
 Package reference
 
 ```html
-<PackageReference Include="RolandasM.Laboratorinis.ManualListSorter" Version="1.0.0" />
+<PackageReference Include="RolandasM.Laboratorinis.ManualListSorter" Version="1.0.3" />
 ```
 
 Or using VisualStudio nuget mannager
@@ -55,7 +55,7 @@ Or using VisualStudio nuget mannager
 
 ## Contributing
 
-No contributions are possible. This is mainly used as a  practice to learn about component making and uploading for other people to see.
+No contributions are possible. This is mainly used as a  practice to learn about component making and uploading.
 
 ## License
 

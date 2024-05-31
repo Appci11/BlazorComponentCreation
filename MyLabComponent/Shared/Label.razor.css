@@ -1,4 +1,4 @@
-.draggable-big {
+.draggable {
     margin-bottom: 10px;
     padding: 10px 10px;
     border: 1px solid #424d5c;
@@ -6,29 +6,18 @@
     background: #5c6b7f;
     color: #ffffff;
     border-radius: 5px;
-    width: 250px;
 }
 
-.draggable-medium {
-    margin-bottom: 10px;
-    padding: 10px 10px;
-    border: 1px solid #424d5c;
-    cursor: grab;
-    background: #5c6b7f;
-    color: #ffffff;
-    border-radius: 5px;
+.small{
+    width: 150px;
+}
+
+.medium {
     width: 200px;
 }
 
-.draggable-small {
-    margin-bottom: 10px;
-    padding: 10px 10px;
-    border: 1px solid #424d5c;
-    cursor: grab;
-    background: #5c6b7f;
-    color: #ffffff;
-    border-radius: 5px;
-    width: 150px;
+.big {
+    width: 250px;
 }
 
 .draggable:active {

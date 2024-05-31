@@ -1,5 +1,5 @@
-﻿<div class="label-status-@Size">
-    <h3>@StultepioPav (@Labels.Count())</h3>
+﻿<div class="label-status @Size">
+    <h3>@StulpelioPav (@Labels.Count())</h3>
 
     <ul class="dropzone @dropClass"
         ondragover="event.preventDefault();"
@@ -20,7 +20,7 @@
 
     [CascadingParameter] LabelsContainer Container { get; set; }
     [Parameter] public EnumColumns ListStatus { get; set; }
-    [Parameter] public String StultepioPav { get; set; }
+    [Parameter] public String StulpelioPav { get; set; }
     [Parameter] public string Size { get; set; } = "big";
 
     List<LabelModel> Labels = new List<LabelModel>();
