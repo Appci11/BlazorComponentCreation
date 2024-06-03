@@ -1,5 +1,6 @@
 ﻿# Manual lists sorter for razor
 
+Unlisted from NuGet.org. Lab work is over.
 Componen is used to sort string type lists manually.
 Component created for learning purposes. Usage in actual projects not recommended
 
